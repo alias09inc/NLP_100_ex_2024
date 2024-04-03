@@ -12,4 +12,7 @@ with open('jawiki-country.json', 'r') as f:
         else:
             print(country_name)
             print(line_json['text'])
+            data = line_json['text']
             break
+
+print(type(data))
