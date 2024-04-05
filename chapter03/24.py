@@ -6,7 +6,7 @@ decoder = json.JSONDecoder()
 with open('jawiki-country.json', 'r') as f:
     line = f.readline()
     while line:
-        line_json=decoder.decode(line)
+        line_json = decoder.decode(line)
         country_name = line_json['title']
         if country_name != 'イギリス':
             line = f.readline()
@@ -19,7 +19,8 @@ with open('jawiki-country.json', 'r') as f:
 data = data.split('\n')
 print(len(data))
 
-ans = [i for i in data if re.search(r'\[\[(ファイル|File):([^]|]+?)(\|.*?)+\]\]',i)]
+ans = [i for i in data if re.search(
+    r'\[\[(ファイル|File):([^]|]+?)(\|.*?)+\]\]', i)]
 # ([^]|]+?) : ]と|が直後に来るのを防ぐ？
 '''
 検証
