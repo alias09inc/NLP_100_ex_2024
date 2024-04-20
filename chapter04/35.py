@@ -34,5 +34,6 @@ for block in blocks:
     for mapped_word in block:
         d[mapped_word['base']] += 1
 
+# どうやらd.itemsのそれぞれの要素はタプルになっているらしい
 ans = sorted(d.items(), key=lambda x:x[1], reverse=True)
 print(ans)
